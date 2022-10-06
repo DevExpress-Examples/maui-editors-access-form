@@ -10,9 +10,9 @@ namespace AccessApp.Views;
 public partial class SignUpView : ContentPage {
 
     public SignUpView() {
-        InitializeComponent();
         ViewModel = new SignUpViewModel();
         BindingContext = ViewModel;
+        InitializeComponent();
     }
 
     SignUpViewModel ViewModel { get; }
