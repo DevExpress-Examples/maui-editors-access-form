@@ -1,0 +1,81 @@
+﻿<ContentPage
+    x:Class="AccessApp.Views.SignUpView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+    xmlns:local="clr-namespace:AccessApp"
+    Title="Sign Up">
+    <ScrollView>
+        <StackLayout Margin="10,10,10,0" Spacing="10">
+            <dxe:TextEdit
+                ErrorText="Login is required"
+                HasError="{Binding LoginHasError}"
+                HelpText="*Required"
+                LabelText="Login"
+                PlaceholderText="Enter login"
+                StartIcon="face_black_24dp"
+                Text="{Binding Login, Mode=TwoWay}"
+                TextChanged="TextEdit_TextChanged" />
+            <dxe:PasswordEdit
+                ErrorText="The password should contain more than 5 characters, have at least one uppercase and one lowercase letter, and one number."
+                HasError="{Binding PasswordHasError}"
+                HelpText="*Required"
+                LabelText="Password"
+                PlaceholderText="Enter password"
+                StartIcon="password_black_24dp"
+                Text="{Binding Password, Mode=TwoWay}"
+                TextChanged="TextEdit_TextChanged" />
+            <dxe:DateEdit
+                ClearIconVisibility="Auto"
+                Date="{Binding BirthDate, Mode=TwoWay}"
+                DisplayFormat="d"
+                IsDateIconVisible="False"
+                LabelText="Birth date"
+                PlaceholderText="Enter birth date"
+                StartIcon="cake_black_24dp"
+                TextHorizontalAlignment="End" />
+            <dxe:ComboBoxEdit
+                x:Name="countries"
+                DisplayMember="Country"
+                ErrorText="Specify your country"
+                FilterMode="StartsWith"
+                IsFilterEnabled="True"
+                ItemsSource="{Binding Codes, Mode=TwoWay}"
+                LabelText="Country"
+                PlaceholderText="Select a country"
+                SelectedItem="{Binding SelectedCountry}"
+                EmptyFilterResultText="No countries match the specified filter" />
+            <dxe:TextEdit
+                ErrorText="Incorrect phone number"
+                LabelText="Phone"
+                Mask="+0 (000) 000-0000"
+                PlaceholderText="Enter phone number"
+                StartIcon="phone_black_24dp"
+                Text="{Binding SelectedCountry.Code}" />
+            <dxe:MultilineEdit
+                LabelText="Notes"
+                MaxCharacterCount="100"
+                MaxLineCount="4"
+                MinLineCount="2"
+                StartIcon="notes_black_24dp"
+                Text="{Binding Notes, Mode=TwoWay}" />
+            <dxe:CheckEdit
+                Margin="0,0,0,0"
+                Padding="0,0,0,0"
+                IsChecked="True"
+                Label="I agree to recieve emails and product offers" />
+            <Label Text="Tell us about your favourite programming languages" />
+            <dxe:InputChipGroup
+                x:Name="inputChipGroup"
+                Completed="OnInputChipGroupCompleted"
+                DisplayMember="Text"
+                IsMultiline="True"
+                ItemsSource="{Binding Chips}" />
+            <dxco:SimpleButton
+                Clicked="OnSignUpClicked"
+                FontAttributes="Bold"
+                Text="SUBMIT" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

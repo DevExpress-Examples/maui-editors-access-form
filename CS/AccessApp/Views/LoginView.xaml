@@ -1,0 +1,48 @@
+﻿<ContentPage
+    x:Class="AccessApp.Views.LoginView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+    Title="Log In Page">
+    <ScrollView>
+        <StackLayout>
+            <Image
+                x:Name="topImage"
+                Aspect="Fill"
+                Source="maui_controls_devexpress" />
+            <StackLayout Margin="10,40,10,0" Spacing="20">
+                <Label
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Text="Login or sign up"
+                    TextColor="#505050" />
+                <dxe:TextEdit
+                    ErrorText="Login is required"
+                    HasError="{Binding LoginHasError}"
+                    HelpText="*Required"
+                    LabelText="Login"
+                    PlaceholderText="Enter login"
+                    StartIcon="face_black_24dp"
+                    Text="{Binding Login, Mode=TwoWay}"
+                    TextChanged="TextEdit_TextChanged" />
+                <dxe:PasswordEdit
+                    ErrorText="The password should contain more than 5 characters, have at least one uppercase and one lowercase letter, and one number."
+                    HasError="{Binding PasswordHasError}"
+                    HelpText="*Required"
+                    LabelText="Password"
+                    MinimumHeightRequest="30"
+                    PlaceholderText="Enter password"
+                    StartIcon="password_black_24dp"
+                    Text="{Binding Password, Mode=TwoWay}"
+                    TextChanged="TextEdit_TextChanged" />
+                <dxco:SimpleButton
+                    Clicked="OnLoginClicked"
+                    IsEnabled="{Binding IsLoginEnabled}"
+                    Text="Login" />
+                <Label Text="Click the sign up button to create an account:" />
+                <dxco:SimpleButton Command="{Binding SignUpCommand}" Text="Sign Up" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
