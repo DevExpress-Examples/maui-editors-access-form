@@ -259,17 +259,17 @@ public class SignUpViewModel : BaseViewModel {
         get { return this.isloginEnabled; }
         set { SetProperty(ref this.isloginEnabled, value); }
     }
-    
+
     public string Notes {
         get { return this.notes; }
         set { SetProperty(ref this.notes, value); }
     }
-    
+
     public DateTime? BirthDate {
         get { return this.birthDate; }
         set { SetProperty(ref this.birthDate, value); }
     }
-    
+
     public string Phone {
         get { return this.phone; }
         set { SetProperty(ref this.phone, value); }
@@ -279,7 +279,7 @@ public class SignUpViewModel : BaseViewModel {
         get { return this.login; }
         set { SetProperty(ref this.login, value); }
     }
-    
+
     public bool LoginHasError {
         get { return this.loginHasError; }
         set { SetProperty(ref this.loginHasError, value); }
@@ -289,7 +289,7 @@ public class SignUpViewModel : BaseViewModel {
         get { return password; }
         set { SetProperty(ref this.password, value); }
     }
-    
+
     public bool PasswordHasError {
         get { return this.passwordHasError; }
         set { SetProperty(ref this.passwordHasError, value); }
@@ -303,13 +303,36 @@ public class SignUpViewModel : BaseViewModel {
     public List<CountryCode> Codes { get; }
     public BindingList<ChipDataObject> Chips { get; }
 
-    public bool ValidateEditors() {
-        PasswordHasError = !Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{5,}$");
+    public void EnableValidation() {
+        this.isValidationEnabled = true;
+    }
+
+    public bool ValidateLogin() {
+        if (!isValidationEnabled)
+            return false;
         LoginHasError = String.IsNullOrEmpty(login);
+        IsLoginEnabled = false;
+        Validate();
+        return true;
+    }
+
+    public bool ValidatePassword() {
+        if (!isValidationEnabled)
+            return false;
+        PasswordHasError = !Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{5,}$");
+        IsLoginEnabled = false;
+        Validate();
+        return false;
+    }
+
+    public bool Validate() {
+        if (!isValidationEnabled)
+            return false;
         if (!PasswordHasError && !LoginHasError) {
             IsLoginEnabled = true;
             return true;
-        } else {
+        }
+        else {
             IsLoginEnabled = false;
             return false;
         }

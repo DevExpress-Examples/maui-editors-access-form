@@ -11,23 +11,19 @@ public partial class LoginView : ContentPage {
         ViewModel = new LoginViewModel();
         BindingContext = ViewModel;
         InitializeComponent();
+        IsInitialized = true;
     }
 
     LoginViewModel ViewModel { get; }
-    bool IsLoaded { get; }
+    bool IsInitialized { get; }
 
     void OnLoginClicked(object sender, EventArgs e) {
-        if (ViewModel.ValidateEditors())
-            DisplayAlert("Success", "You are logged in", "OK");
+        DisplayAlert("Success", "You are logged in", "OK");
     }
 
-    void TextEdit_Unfocused(System.Object sender, Microsoft.Maui.Controls.FocusEventArgs e) {
-        ViewModel.ValidateEditors();
-    }
-
-    void TextEdit_TextChanged(System.Object sender, System.EventArgs e) {
-        if (IsLoaded)
+    void OnTextEditTextChanged(System.Object sender, System.EventArgs e) {
+        if (IsLoaded) {
             ViewModel.ValidateEditors();
+        }
     }
 }
-

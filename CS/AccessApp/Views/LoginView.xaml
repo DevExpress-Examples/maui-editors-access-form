@@ -7,10 +7,6 @@
     Title="Log In Page">
     <ScrollView>
         <StackLayout>
-            <Image
-                x:Name="topImage"
-                Aspect="Fill"
-                Source="maui_controls_devexpress" />
             <StackLayout Margin="10,40,10,0" Spacing="20">
                 <Label
                     FontSize="20"
@@ -25,8 +21,9 @@
                     PlaceholderText="Enter login"
                     StartIcon="face_black_24dp"
                     Text="{Binding Login, Mode=TwoWay}"
-                    TextChanged="TextEdit_TextChanged" />
+                    TextChanged="OnTextEditTextChanged" />
                 <dxe:PasswordEdit
+                    x:Name="passwordEdit"
                     ErrorText="The password should contain more than 5 characters, have at least one uppercase and one lowercase letter, and one number."
                     HasError="{Binding PasswordHasError}"
                     HelpText="*Required"
@@ -35,7 +32,7 @@
                     PlaceholderText="Enter password"
                     StartIcon="password_black_24dp"
                     Text="{Binding Password, Mode=TwoWay}"
-                    TextChanged="TextEdit_TextChanged" />
+                    TextChanged="OnTextEditTextChanged" />
                 <dxco:SimpleButton
                     Clicked="OnLoginClicked"
                     IsEnabled="{Binding IsLoginEnabled}"

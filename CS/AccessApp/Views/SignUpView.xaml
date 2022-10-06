@@ -4,7 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
     xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
-    xmlns:local="clr-namespace:AccessApp"
     Title="Sign Up">
     <ScrollView>
         <StackLayout Margin="10,10,10,0" Spacing="10">
@@ -14,18 +13,18 @@
                 HelpText="*Required"
                 LabelText="Login"
                 PlaceholderText="Enter login"
+                PropertyChanged="OnLoginChanged"
                 StartIcon="face_black_24dp"
-                Text="{Binding Login, Mode=TwoWay}"
-                TextChanged="TextEdit_TextChanged" />
+                Text="{Binding Login, Mode=TwoWay}" />
             <dxe:PasswordEdit
                 ErrorText="The password should contain more than 5 characters, have at least one uppercase and one lowercase letter, and one number."
                 HasError="{Binding PasswordHasError}"
                 HelpText="*Required"
                 LabelText="Password"
                 PlaceholderText="Enter password"
+                PropertyChanged="OnPasswordChanged"
                 StartIcon="password_black_24dp"
-                Text="{Binding Password, Mode=TwoWay}"
-                TextChanged="TextEdit_TextChanged" />
+                Text="{Binding Password, Mode=TwoWay}" />
             <dxe:DateEdit
                 ClearIconVisibility="Auto"
                 Date="{Binding BirthDate, Mode=TwoWay}"
@@ -45,7 +44,7 @@
                 LabelText="Country"
                 PlaceholderText="Select a country"
                 SelectedItem="{Binding SelectedCountry}"
-                EmptyFilterResultText="No countries match the specified filter" />
+                EmptyFilterResultText="No countries match the specified filter"/>
             <dxe:TextEdit
                 ErrorText="Incorrect phone number"
                 LabelText="Phone"
