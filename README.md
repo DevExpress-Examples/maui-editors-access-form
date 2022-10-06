@@ -18,6 +18,8 @@ This sample application shows you how to create Login and Sign-Up forms and impl
 
 Refer to the following YouTube video for more information on how to create this application: [Adding Data Editors to your .NET MAUI application](https://www.youtube.com/watch?v=Njq2qCB3j6k&ab_channel=DevExpress).
 
+![Editors-Access-Form](https://user-images.githubusercontent.com/12169834/194336424-f1cd6b8c-403c-4030-b6d3-afb8baabad3b.png)
+
 ## Files to Look At
 
 <!-- default file list -->
