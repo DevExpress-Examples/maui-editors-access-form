@@ -5,7 +5,7 @@
 <!-- default badges end -->
 # DevExpress .NET MAUI Editors - Create Login and Sign-Up Forms 
 
-This sample application shows you how to create Login and Sign-Up forms and implement switching between them. The application includes the following DevExpress MAUI Editors:
+This sample application shows how to create Login and Sign-Up forms and implement switching between them. The application includes the following DevExpress MAUI Editors:
 
 * [TextEdit](https://docs.devexpress.com/MAUI/DevExpress.Maui.Editors.TextEdit)
 * [PasswordEdit](https://docs.devexpress.com/MAUI/DevExpress.Maui.Editors.PasswordEdit)
@@ -16,7 +16,7 @@ This sample application shows you how to create Login and Sign-Up forms and impl
 * [InputChipGroup](https://docs.devexpress.com/MAUI/DevExpress.Maui.Editors.InputChipGroup)
 * [CheckEdit](https://docs.devexpress.com/MAUI/DevExpress.Maui.Editors.CheckEdit)
 
-Refer to the following YouTube video for more information on how to create this application: [Adding Data Editors to your .NET MAUI application](https://www.youtube.com/watch?v=Njq2qCB3j6k&ab_channel=DevExpress).
+Refer to the following YouTube video for instruction on how to create this application: [Adding Data Editors to your .NET MAUI application](https://www.youtube.com/watch?v=Njq2qCB3j6k&ab_channel=DevExpress).
 
 <img src="https://user-images.githubusercontent.com/12169834/194336424-f1cd6b8c-403c-4030-b6d3-afb8baabad3b.png" width="290px"/>
 
