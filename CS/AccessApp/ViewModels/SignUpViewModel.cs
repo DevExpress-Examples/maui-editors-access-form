@@ -8,6 +8,7 @@ public class SignUpViewModel : BaseViewModel {
 
     bool isValidationEnabled = false;
     bool isloginEnabled = false;
+    bool issignupEnabled = false;
     string notes = "";
     DateTime? birthDate;
     string phone;

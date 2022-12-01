@@ -17,10 +17,17 @@ public partial class SignUpView : ContentPage {
 
     SignUpViewModel ViewModel { get; }
 
-    void OnSignUpClicked(System.Object sender, System.EventArgs e) {
+    async void OnSignUpClicked(System.Object sender, System.EventArgs e) {
         ViewModel.EnableValidation();
+        bool alertResult;
         if (ViewModel.Validate())
-            DisplayAlert("Success", "You account created successfully", "OK");
+        {
+            alertResult = await DisplayAlert("Success", "Your account created successfully", null, "OK");
+            if (!alertResult)
+            {
+                await Shell.Current.Navigation.PopAsync();
+            }
+        }
     }
 
     void OnLoginChanged(System.Object sender, System.EventArgs e) {

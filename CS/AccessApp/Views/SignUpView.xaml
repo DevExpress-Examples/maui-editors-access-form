@@ -38,13 +38,13 @@
                 x:Name="countries"
                 DisplayMember="Country"
                 ErrorText="Specify your country"
-                FilterMode="StartsWith"
+                FilterCondition="StartsWith"
                 IsFilterEnabled="True"
                 ItemsSource="{Binding Codes, Mode=TwoWay}"
                 LabelText="Country"
                 PlaceholderText="Select a country"
                 SelectedItem="{Binding SelectedCountry}"
-                EmptyFilterResultText="No countries match the specified filter"/>
+                NoResultsFoundText="No countries match the specified filter"/>
             <dxe:TextEdit
                 ErrorText="Incorrect phone number"
                 LabelText="Phone"
@@ -74,7 +74,8 @@
             <dxco:SimpleButton
                 Clicked="OnSignUpClicked"
                 FontAttributes="Bold"
-                Text="SUBMIT" />
+                Text="SUBMIT"
+                IsEnabled="{Binding IsLoginEnabled}"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

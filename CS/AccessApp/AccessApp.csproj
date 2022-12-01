@@ -1,10 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>AccessApp</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -25,10 +24,10 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
 	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
+<!--
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
 	  <EnableCodeSigning>false</EnableCodeSigning>
-	</PropertyGroup>
+	</PropertyGroup>-->
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -46,16 +45,17 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Views\SignUpView.xaml">
-	    <SubType></SubType>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\LoginView.xaml">
-	    <SubType></SubType>
 	  </MauiXaml>
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
-	  <PackageReference Include="DevExpress.Maui.Editors" Version="22.1.*" />
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
+	  <PackageReference Include="DevExpress.Maui.Editors" Version="22.2.2-beta" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-ios'">
-	  <PackageReference Include="DevExpress.Maui.Editors" Version="22.1.*" />
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
+	  <PackageReference Include="DevExpress.Maui.Editors" Version="22.2.2-beta" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Platforms\iOS\Resources\LaunchScreen.xib" />
 	</ItemGroup>
 </Project>
