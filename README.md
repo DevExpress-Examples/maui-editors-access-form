@@ -20,6 +20,7 @@ Refer to the following YouTube video for instruction on how to create this appli
 
 <img src="https://user-images.githubusercontent.com/12169834/194336424-f1cd6b8c-403c-4030-b6d3-afb8baabad3b.png" width="290px"/>
 
+<br/>
 
 ## Files to Review
 
