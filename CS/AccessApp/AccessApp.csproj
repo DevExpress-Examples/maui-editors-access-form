@@ -50,10 +50,10 @@
 	  </MauiXaml>
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
-	  <PackageReference Include="DevExpress.Maui.Editors" Version="22.2.2-beta" />
+	  <PackageReference Include="DevExpress.Maui.Editors" Version="22.2.*" />
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
-	  <PackageReference Include="DevExpress.Maui.Editors" Version="22.2.2-beta" />
+	  <PackageReference Include="DevExpress.Maui.Editors" Version="22.2.*" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Remove="Platforms\iOS\Resources\LaunchScreen.xib" />
