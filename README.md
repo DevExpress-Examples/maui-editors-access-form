@@ -25,13 +25,13 @@ Refer to the following YouTube video for instruction on how to create this appli
 ## Files to Review
 
 <!-- default file list -->
-- [AppShell.xaml](/CS/AccessApp/AppShell.xaml)
-- [LoginViewModel.cs](CS/AccessApp/ViewModels/LoginViewModel.cs)
-- [SignUpViewModel.cs](/CS/AccessApp/ViewModels/SignUpViewModel.cs)
-- [LoginView.xaml](/CS/AccessApp/Views/LoginView.xaml)
-- [LoginView.xaml.cs](/CS/AccessApp/Views/LoginView.xaml.cs)
-- [SignUpView.xaml](/CS/AccessApp/Views/SignUpView.xaml)
-- [SignUpView.xaml.cs](/CS/AccessApp/Views/SignUpView.xaml.cs)
+- [AppShell.xaml](/CS/AppShell.xaml)
+- [LoginViewModel.cs](CS/ViewModels/LoginViewModel.cs)
+- [SignUpViewModel.cs](/CS/ViewModels/SignUpViewModel.cs)
+- [LoginView.xaml](/CS/Views/LoginView.xaml)
+- [LoginView.xaml.cs](/CS/Views/LoginView.xaml.cs)
+- [SignUpView.xaml](/CS/Views/SignUpView.xaml)
+- [SignUpView.xaml.cs](/CS/Views/SignUpView.xaml.cs)
 <!-- default file list end -->
 
 ## Documentation
