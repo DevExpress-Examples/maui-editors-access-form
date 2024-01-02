@@ -2,12 +2,12 @@
     x:Class="AccessApp.Views.LoginView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
     xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
     Title="Log In Page">
     <ScrollView>
-        <StackLayout>
-            <StackLayout Margin="10,40,10,0" Spacing="20">
+        <dx:DXStackLayout>
+            <dx:DXStackLayout Margin="10,40,10,0" ItemSpacing="20">
                 <Label
                     FontSize="20"
                     HorizontalOptions="Center"
@@ -33,13 +33,13 @@
                     StartIcon="password_black_24dp"
                     Text="{Binding Password, Mode=TwoWay}"
                     TextChanged="OnTextEditTextChanged" />
-                <dxco:SimpleButton
+                <dx:DXButton
                     Clicked="OnLoginClicked"
                     IsEnabled="{Binding IsLoginEnabled}"
-                    Text="Login" />
+                    Content="Login" />
                 <Label Text="Click the sign up button to create an account:" />
-                <dxco:SimpleButton Command="{Binding SignUpCommand}" Text="Sign Up" />
-            </StackLayout>
-        </StackLayout>
+                <dx:DXButton Command="{Binding SignUpCommand}" Content="Sign Up" />
+            </dx:DXStackLayout>
+        </dx:DXStackLayout>
     </ScrollView>
 </ContentPage>

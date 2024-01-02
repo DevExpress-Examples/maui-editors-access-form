@@ -12,7 +12,7 @@ This sample application shows how to create Login and Sign-Up forms and implemen
 * [MultilineEdit](https://docs.devexpress.com/MAUI/DevExpress.Maui.Editors.MultilineEdit)
 * [ComboBoxEdit](https://docs.devexpress.com/MAUI/DevExpress.Maui.Editors.ComboBoxEdit)
 * [DateEdit](https://docs.devexpress.com/MAUI/DevExpress.Maui.Editors.DateEdit)
-* [SimpleButton](https://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.SimpleButton)
+* [DXButton](https://docs.devexpress.com/MAUI/DevExpress.Maui.Core.DXButton)
 * [InputChipGroup](https://docs.devexpress.com/MAUI/DevExpress.Maui.Editors.InputChipGroup)
 * [CheckEdit](https://docs.devexpress.com/MAUI/DevExpress.Maui.Editors.CheckEdit)
 
