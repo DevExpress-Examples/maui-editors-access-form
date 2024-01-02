@@ -2,11 +2,11 @@
     x:Class="AccessApp.Views.SignUpView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
     xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
     Title="Sign Up">
     <ScrollView>
-        <StackLayout Margin="10,10,10,0" Spacing="10">
+        <dx:DXStackLayout Margin="10,10,10,0" ItemSpacing="10">
             <dxe:TextEdit
                 ErrorText="Login is required"
                 HasError="{Binding LoginHasError}"
@@ -71,11 +71,11 @@
                 DisplayMember="Text"
                 IsMultiline="True"
                 ItemsSource="{Binding Chips}" />
-            <dxco:SimpleButton
+            <dx:DXButton
                 Clicked="OnSignUpClicked"
                 FontAttributes="Bold"
-                Text="SUBMIT"
+                Content="SUBMIT"
                 IsEnabled="{Binding IsLoginEnabled}"/>
-        </StackLayout>
+        </dx:DXStackLayout>
     </ScrollView>
 </ContentPage>
