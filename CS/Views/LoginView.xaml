@@ -2,8 +2,7 @@
     x:Class="AccessApp.Views.LoginView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
-    xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+    xmlns:dx="http://schemas.devexpress.com/maui"
     Title="Log In Page">
     <ScrollView>
         <dx:DXStackLayout>
@@ -13,7 +12,7 @@
                     HorizontalOptions="Center"
                     Text="Login or sign up"
                     TextColor="#505050" />
-                <dxe:TextEdit
+                <dx:TextEdit
                     ErrorText="Login is required"
                     HasError="{Binding LoginHasError}"
                     HelpText="*Required"
@@ -22,7 +21,7 @@
                     StartIcon="face_black_24dp"
                     Text="{Binding Login, Mode=TwoWay}"
                     TextChanged="OnTextEditTextChanged" />
-                <dxe:PasswordEdit
+                <dx:PasswordEdit
                     x:Name="passwordEdit"
                     ErrorText="The password should contain more than 5 characters, have at least one uppercase and one lowercase letter, and one number."
                     HasError="{Binding PasswordHasError}"

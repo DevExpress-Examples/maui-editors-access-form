@@ -2,12 +2,11 @@
     x:Class="AccessApp.Views.SignUpView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
-    xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+    xmlns:dx="http://schemas.devexpress.com/maui"
     Title="Sign Up">
     <ScrollView>
         <dx:DXStackLayout Margin="10,10,10,0" ItemSpacing="10">
-            <dxe:TextEdit
+            <dx:TextEdit
                 ErrorText="Login is required"
                 HasError="{Binding LoginHasError}"
                 HelpText="*Required"
@@ -16,7 +15,7 @@
                 PropertyChanged="OnLoginChanged"
                 StartIcon="face_black_24dp"
                 Text="{Binding Login, Mode=TwoWay}" />
-            <dxe:PasswordEdit
+            <dx:PasswordEdit
                 ErrorText="The password should contain more than 5 characters, have at least one uppercase and one lowercase letter, and one number."
                 HasError="{Binding PasswordHasError}"
                 HelpText="*Required"
@@ -25,7 +24,7 @@
                 PropertyChanged="OnPasswordChanged"
                 StartIcon="password_black_24dp"
                 Text="{Binding Password, Mode=TwoWay}" />
-            <dxe:DateEdit
+            <dx:DateEdit
                 ClearIconVisibility="Auto"
                 Date="{Binding BirthDate, Mode=TwoWay}"
                 DisplayFormat="d"
@@ -34,7 +33,7 @@
                 PlaceholderText="Enter birth date"
                 StartIcon="cake_black_24dp"
                 TextHorizontalAlignment="End" />
-            <dxe:ComboBoxEdit
+            <dx:ComboBoxEdit
                 x:Name="countries"
                 DisplayMember="Country"
                 ErrorText="Specify your country"
@@ -45,27 +44,27 @@
                 PlaceholderText="Select a country"
                 SelectedItem="{Binding SelectedCountry}"
                 NoResultsFoundText="No countries match the specified filter"/>
-            <dxe:TextEdit
+            <dx:TextEdit
                 ErrorText="Incorrect phone number"
                 LabelText="Phone"
                 Mask="+0 (000) 000-0000"
                 PlaceholderText="Enter phone number"
                 StartIcon="phone_black_24dp"
                 Text="{Binding SelectedCountry.Code}" />
-            <dxe:MultilineEdit
+            <dx:MultilineEdit
                 LabelText="Notes"
                 MaxCharacterCount="100"
                 MaxLineCount="4"
                 MinLineCount="2"
                 StartIcon="notes_black_24dp"
                 Text="{Binding Notes, Mode=TwoWay}" />
-            <dxe:CheckEdit
+            <dx:CheckEdit
                 Margin="0,0,0,0"
                 Padding="0,0,0,0"
                 IsChecked="True"
                 Label="I agree to recieve emails and product offers" />
             <Label Text="Tell us about your favourite programming languages" />
-            <dxe:InputChipGroup
+            <dx:InputChipGroup
                 x:Name="inputChipGroup"
                 Completed="OnInputChipGroupCompleted"
                 DisplayMember="Text"

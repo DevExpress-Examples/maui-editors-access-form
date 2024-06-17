@@ -1,32 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <?xaml-comp compile="true" ?>
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
-    xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors">
+    xmlns:dx="http://schemas.devexpress.com/maui">
 
     <Style TargetType="dx:DXButton">
         <Setter Property="BackgroundColor" Value="#5B27D9" />
         <Setter Property="TextColor" Value="#FFFFFF" />
     </Style>
-    <Style TargetType="dxe:TextEdit">
+    <Style TargetType="dx:TextEdit">
         <Setter Property="FocusedBorderColor" Value="#5B27D9" />
         <Setter Property="FocusedLabelColor" Value="#5B27D9" />
     </Style>
-    <Style TargetType="dxe:PasswordEdit">
+    <Style TargetType="dx:PasswordEdit">
         <Setter Property="FocusedBorderColor" Value="#5B27D9" />
         <Setter Property="FocusedLabelColor" Value="#5B27D9" />
     </Style>
-    <Style TargetType="dxe:ComboBoxEdit">
+    <Style TargetType="dx:ComboBoxEdit">
         <Setter Property="FocusedBorderColor" Value="#5B27D9" />
         <Setter Property="FocusedLabelColor" Value="#5B27D9" />
     </Style>
-    <Style TargetType="dxe:MultilineEdit">
+    <Style TargetType="dx:MultilineEdit">
         <Setter Property="FocusedBorderColor" Value="#5B27D9" />
         <Setter Property="FocusedLabelColor" Value="#5B27D9" />
         <Setter Property="CursorColor" Value="#5B27D9" />
     </Style>
-    <Style TargetType="dxe:CheckEdit">
+    <Style TargetType="dx:CheckEdit">
         <Setter Property="CheckBoxColor" Value="#5B27D9" />
         <Setter Property="CheckedCheckBoxColor" Value="#5B27D9" />
     </Style>
