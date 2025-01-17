@@ -2,11 +2,17 @@
 
 namespace AccessApp;
 
-public partial class App : Application {
-	public App() {
-	InitializeComponent();
+public partial class App : Application
+{
+    public App()
+    {
+        InitializeComponent();
         Routing.RegisterRoute("LoginView", typeof(LoginView));
         Routing.RegisterRoute("SignUpView", typeof(SignUpView));
-        MainPage = new AppShell();
-	}
+    }
+
+    protected override Window CreateWindow(IActivationState activationState)
+    {
+        return new Window(new AppShell());
+    }
 }

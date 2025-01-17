@@ -1,8 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
-    <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-    <!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
+    <TargetFrameworks>net9.0-android;net9.0-ios</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <RootNamespace>AccessApp</RootNamespace>
     <UseMaui>true</UseMaui>
@@ -18,9 +16,10 @@
     <ApplicationVersion>1</ApplicationVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+    <MauiVersion>9.0.10</MauiVersion>
   </PropertyGroup>
   <!--
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-ios|AnyCPU'">
 	  <EnableCodeSigning>false</EnableCodeSigning>
 	</PropertyGroup>-->
   <ItemGroup>
@@ -44,11 +43,11 @@
     <MauiXaml Update="Views\LoginView.xaml">
     </MauiXaml>
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
-    <PackageReference Include="DevExpress.Maui.Editors" Version="24.1.*" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
+    <PackageReference Include="DevExpress.Maui.Editors" Version="24.2.*" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
-    <PackageReference Include="DevExpress.Maui.Editors" Version="24.1.*" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-ios'">
+    <PackageReference Include="DevExpress.Maui.Editors" Version="24.2.*" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Platforms\iOS\Resources\LaunchScreen.xib" />
